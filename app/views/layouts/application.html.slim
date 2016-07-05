@@ -13,4 +13,13 @@ html
       == render 'layouts/navigation'
     main[role="main"]
       == render 'layouts/messages'
-      == yield
+      #wrapper
+        == render 'layouts/sidebar.html'
+        == yield
+
+/! Menu Toggle Script
+javascript:
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
