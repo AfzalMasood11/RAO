@@ -23,6 +23,9 @@ gem 'simple_form'
 gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
+#activeadmin
+gem 'activeadmin', '~> 1.0.0.pre4'
+
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
