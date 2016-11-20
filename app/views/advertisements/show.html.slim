@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong User:
+  = @advertisement.user
+p
+  strong Title:
+  = @advertisement.title
+p
+  strong Description:
+  = @advertisement.description
+p
+  strong Is publised:
+  = @advertisement.is_publised
+
+= link_to 'Edit', edit_advertisement_path(@advertisement)
+'|
+= link_to 'Back', advertisements_path
