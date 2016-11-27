@@ -1,12 +1,11 @@
-h1 Listing advertisements
+h1 Advertisements
 
 table
   thead
     tr
-      th User
       th Title
       th Description
-      th Is publised
+      th Published
       th
       th
       th
@@ -14,13 +13,13 @@ table
   tbody
     - @advertisements.each do |advertisement|
       tr
-        td = advertisement.user.email
         td = advertisement.title
         td = advertisement.description
-        td = advertisement.is_publised
-        td = link_to 'Show', advertisement
-        td = link_to 'Edit', edit_advertisement_path(advertisement)
-        td = link_to 'Destroy', advertisement, data: { confirm: 'Are you sure?' }, method: :delete
+        td = advertisement.published
+        - if current_user.try(:admin?) || current_user.id == advertisement.user.id
+          td = link_to 'Show', advertisement
+          td = link_to 'Edit', edit_advertisement_path(advertisement)
+          td = link_to 'Destroy', advertisement, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 

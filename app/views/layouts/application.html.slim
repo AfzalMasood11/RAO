@@ -12,9 +12,9 @@ html
     header
       == render 'layouts/navigation'
     main[role="main"]
-      == render 'layouts/messages'
       #wrapper
         == render 'layouts/sidebar.html'
+        == render 'layouts/messages'
         == yield
 
 /! Menu Toggle Script

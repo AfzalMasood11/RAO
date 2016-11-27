@@ -4,7 +4,7 @@ class CreateAdvertisements < ActiveRecord::Migration
       t.references :user, index: true, foreign_key: true
       t.string :title
       t.string :description
-      t.boolean :is_publised
+      t.boolean :published
 
       t.timestamps null: false
     end
