@@ -15,7 +15,7 @@ table
       tr
         td = advertisement.title
         td = advertisement.description
-        td = advertisement.is_publised
+        td = advertisement.published
         - if current_user.try(:admin?) || current_user.id == advertisement.user.id
           td = link_to 'Show', advertisement
           td = link_to 'Edit', edit_advertisement_path(advertisement)
